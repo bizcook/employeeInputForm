@@ -1,0 +1,89 @@
+body{
+  background-color: dimgray;
+  display: inline-block;
+  margin: 0 250px 0 250px;
+  padding: 40px;
+}
+h1{
+  font-family: bebas, avenir, 'gill sans', sans-serif;
+  color: white;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  border-bottom: 1px solid white;
+  padding-bottom: 10px;
+
+
+}
+form {
+  color: tomato;
+  font-family: bebas, avenir, 'gill sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 20px 40px 20px;
+  background-color: white;
+}
+label{
+  margin-top: 40px;
+  padding: 20px;
+  display: inline-block;
+  width: 200px;
+}
+
+.resultsEmployee{
+  padding: 0 20px 40px 20px;
+  background-color: tomato;
+}
+
+h3{
+  color: white;
+  font-family: bebas, avenir, 'gill sans', sans-serif;
+  font-size: 32 px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: inline;
+  text-align: left;
+}
+
+p.monthlySalary{
+  font-family: bebas, avenir, 'gill sans', sans-serif;
+  font-size: 12 px;
+  color: white;
+  letter-spacing: 1.5px;
+  padding-left: 20px;
+  padding-top: 20px;
+  margin-top: 10px;
+}
+.submit{
+  text-align: right;
+  width: 40px;
+}
+ul{
+  color: white;
+  font-family: bebas, avenir, 'gill sans', sans-serif;
+  margin-left: 20px;
+}
+
+input[type="submit"] {
+    background-color: tomato;
+    color: white;
+    border: 0;
+    font-family: bebas, avenir, 'gill sans', sans-serif;
+    letter-spacing: 1px;
+    display: block;
+    margin-left: 20px;
+    padding: 10px;
+
+}
+input[type="submit"]:hover {
+    background-color: dimgray;
+    color: white;
+    border: 0;
+    font-family: bebas, avenir, 'gill sans', sans-serif;
+    letter-spacing: 1px;
+    display: block;
+    margin-left: 20px;
+    padding: 10px;
+
+}
