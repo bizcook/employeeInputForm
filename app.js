@@ -5,11 +5,8 @@ $('#employeeForm').on('submit', function(event){
   event.preventDefault();
 
 
-//create array that holds the values entered
+//create object that holds the values entered
 var empValues = {};
-
-//test
-console.log($('#employeeForm').serializeArray());
 
 //create object from values entered
 $.each($('#employeeForm').serializeArray(), function(i, field){
@@ -19,55 +16,56 @@ $.each($('#employeeForm').serializeArray(), function(i, field){
 //clears out the form
 $('#employeeForm').find('input[type=text]').val('');
 
-//push the entered values into an empty array
-employeeArray.push();
+//push the entered values from the employeeArray into an empty object (empValues)
+employeeArray.push(empValues);
 
 //declares monthly salary function
 monthlySal();
 
 });
+
 monthlySal();
 });
 
-// declares an empty array to be filled with info
+// declares an empty array to be filled with info from what the employee entered!
 var employeeArray = [];
 
 //calculate monthly salary expense and make it a digit instead of string.
 function monthlySal(){
+  //declare salary variable
   var salary = 0;
   for(i = 0; i < employeeArray.length; i++){
+  //declares the employee variable
     var employee = employeeArray[i];
-    salary += parseInt(employee.salary/12);
-
+    salary += Math.round(parseInt(employee.salary/12));
   }
+  //declare the function to all the info to the DOM
+  addToDom();
 
-
-  //show each employee entry in an unordered list
+  //show each employee entry in an unordered list and append it to the resultsEmployee div in html
   function addToDom(){
     $('.resultsEmployee').append('<ul class="employeeInfo"</ul>');
-
+//set var $el so that things are less messy
     var $el = $('.resultsEmployee').children().last();
 
-    $el.append('<h3>' + employeeArray.employeeFirst + ' ' + employeeArray.employeeLast + '</h3>');
-    $el.append('<li>' + employeeArray.employeeID + '</li>');
-    $el.append('<li>' + employeeArray.jobTitle + '</li>');
-    $el.append('<li>' + employeeArray.salary +  + '</li>');
+    $el.append('<h3>' + employee.employeeFirst + ' ' + employee.employeeLast + '</h3>');
+    $el.append('<li>' + employee.employeeID + '</li>');
+    $el.append('<li>' + employee.jobTitle + '</li>');
+    $el.append('<li>' + employee.salary + '</li>');
 
 // delete button to get rid of employee
     $el.append('<button class="delete">SEE YA LATER</button>');
 
   }
 
-  addToDom();
-
     function deleteIT(){
       $(this).parent().remove();
     }
 
   //show updated total append to DOM
-  $('.monthlySalary').text('$' + salary + ' per month! WOW.');
+  $('.monthlySalary').text(salary + ' dollars per month! WOW.');
 
-  //delete it allllllll
+  //delete it through the deleteIT function!
   $('.resultsEmployee').on('click', '.delete', deleteIT);
 
 
